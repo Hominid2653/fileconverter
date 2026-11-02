@@ -1,0 +1,26 @@
+---
+description: Implement UI with existing Radix wrappers and Sienna tokens
+globs: "**/*.{tsx,css}"
+alwaysApply: false
+---
+
+# UI implementation
+
+- Restyle through `src/components/ui/*` (Radix + `cn` + CVA). Do not import raw `@radix-ui/*` in feature views.
+- Prefer `Button`, `Label`, `Select`, `Slider`, `Switch`, `Tabs`, `Tooltip`, `Separator`, `Progress`.
+- Feature layout lives in `Header`, `DropZone`, `Workspace` — keep pages composing those.
+- Transparent image previews use the `.checkerboard` class, not a gray grid.
+- Grain overlay stays on `body::before` at z-index 0; `#root` stays `z-index: 1`. Never put a full-page overlay above content.
+- Tokens live in `src/index.css` `@theme`. Add colors there, then use `bg-cream-*`, `text-ink`, `font-display`.
+- Object URLs: `useObjectUrl` in `src/lib/utils.ts` (Strict Mode safe). Do not `useMemo` + revoke.
+- Conversion stays on-device. Do not add upload APIs for source files.
+
+```tsx
+// ❌ BAD
+import * as Slider from '@radix-ui/react-slider'
+<Slider.Root className="bg-gray-200" />
+
+// ✅ GOOD
+import { Slider } from '@/components/ui/slider'
+<Slider min={50} max={100} value={[quality]} onValueChange={...} />
+```

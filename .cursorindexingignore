@@ -1,0 +1,7 @@
+# Extra indexing exclusions on top of .cursorignore
+node_modules/
+dist/
+.vite/
+coverage/
+*.wasm
+*.onnx

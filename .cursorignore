@@ -1,0 +1,40 @@
+﻿# Dependencies — never index
+node_modules/
+.pnp
+.pnp.js
+
+# Build output
+dist/
+dist-ssr/
+build/
+out/
+.vite/
+
+# Env and secrets
+.env
+.env.*
+!.env.example
+
+# Logs, caches, coverage
+logs/
+*.log
+coverage/
+.nyc_output/
+.cache/
+.turbo/
+.parcel-cache/
+.eslintcache
+*.tsbuildinfo
+playwright-report/
+test-results/
+
+# OS / editor junk
+.DS_Store
+Thumbs.db
+.idea/
+
+# Heavy binary / model artifacts (bg-removal, onnx, wasm)
+*.wasm
+*.onnx
+.onnx/
+models/

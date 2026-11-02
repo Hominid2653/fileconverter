@@ -1,0 +1,43 @@
+---
+description: Sienna cream-and-brown visual language for every new screen and component
+alwaysApply: true
+---
+
+# Sienna design
+
+This is a quiet photo atelier, not a SaaS dashboard. Cream paper, espresso ink, brass accents.
+
+## Palette (use tokens, never raw hex in components)
+
+- Page: `bg-cream-50`, text `text-ink`
+- Surfaces: `bg-cream-50` / `bg-cream-100` with `border-cream-300`
+- Primary actions: `bg-espresso` / `text-cream-50`
+- Secondary text: `text-cocoa`; italic display accents: `text-umber`
+- Warm highlight: `caramel`; errors: `terracotta`; rare gold: `brass`
+- Shadows: `shadow-paper`, hover `shadow-lift` (brown-tinted, never gray)
+
+## Type
+
+- UI / body: `font-sans` (Outfit)
+- Headlines: `font-display` (Fraunces). Italic Fraunces for one lyrical line, not whole paragraphs
+- Eyebrows: 11px, uppercase, wide tracking (`tracking-[0.18em]`–`tracking-[0.28em]`), `text-cocoa`
+
+## Shape and motion
+
+- Cards: `rounded-[1.75rem]`–`rounded-[2rem]`, `border-cream-300`, `shadow-paper`
+- Buttons and chips: `rounded-full`
+- Focus: `ring-caramel/70` with `ring-offset-cream-50`
+- No cool gray, no blue links, no purple gradients, no Inter/Roboto, no heavy drop shadows
+
+```tsx
+// ❌ BAD
+<div className="rounded-md bg-white text-slate-900 shadow-xl">
+  <h1 className="font-sans font-bold">Convert files</h1>
+</div>
+
+// ✅ GOOD
+<section className="rounded-[1.75rem] border border-cream-300 bg-cream-50 shadow-paper">
+  <p className="text-[11px] tracking-[0.22em] text-cocoa uppercase">Convert</p>
+  <h1 className="font-display text-4xl text-ink">Drop a photograph.</h1>
+</section>
+```
